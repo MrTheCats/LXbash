@@ -20,22 +20,11 @@ My best bash's ordinated in list and categories
 
 * * *
 
-### NoIP
-
-- NoIP Rasberry Pi 5  
-    `noip-duc -g all.ddnskey.com --username wcgvp8b --password oP22GnjBE6mq`
-
-* * *
-
 ### SSH
 
 - SSH Rasberry PI 5  
-    `ssh thecatsserver1@192.168.1.32`
+    `ssh username@local/publicIP`
     
-- SSH Server1  
-    `ssh thecatserver@192.168.1.31`
-    
-
 * * *
 
 - Restart  
@@ -99,17 +88,14 @@ Enable to start on booting the machine (permanent) `sudo systemctl enable blueto
 
 ### KDE Connect
 
-UFW
+### UFW
 
 ```
 sudo ufw allow 1714:1764/udp
 sudo ufw allow 1714:1764/tcp
 sudo ufw reload
 ```
-
-  
-
-Firewalld
+### Firewalld
 
 ```
 sudo firewall-cmd --permanent --zone=public --add-service=kdeconnect
@@ -275,23 +261,9 @@ Install [Docker](https://linuxiac.com/how-to-install-docker-on-raspberry-pi/)
 ### RClone
 
 Start nextcloud RClone `rclone mount NextcloudPI: ~/mnt/nextcloud --vfs-cache-mode full --no-check-certificate &`
-***
-## RasberryPI 
-### VNC Connections
-- Installing Server Software `sudo apt-get install realvnc-vnc-server realvnc-vnc-viewer`
-- Installing Client Software `sudo pacman -S remmina`
-
-Needed fix to make Remmina work
-On the RasberryPI paste this:
-```
-echo 'Encryption=PreferOn' | sudo tee -a /root/.vnc/config.d/vncserver-x11
-sudo vncpasswd -legacy -service
-sudo systemctl restart vncserver-x11-serviced
-```
-
-Sources: [RasberryPI Fix](https://raspberrypi.stackexchange.com/questions/142654/remmina-does-not-connect-to-raspberry-pi-bullseye-after-realvnc-server-update)
 
 ***
+
 ## Arch
 
 ### Pacman
@@ -304,8 +276,6 @@ Sources: [RasberryPI Fix](https://raspberrypi.stackexchange.com/questions/142654
 Usually `/var/www/html/nextcloud/config/config.php`
 Or where you put the nextcloud installation
 
-### Different ports for more sites
-[Using multiple ports in apache (For nextcloud)](:/852b1dc1f2c7446cb2b5592e35f87213)
 ### HTTPS connection (Certbot Plugin Apache)
 [Website Certbot](https://certbot.eff.org/)
 
@@ -317,14 +287,3 @@ Or where you put the nextcloud installation
 
 3. Obtain the certificate
 `sudo certbot --apache`
-
-## Programs Needed SurfaceGo 3 
-### List Programs
-- Joplin
-- [VS Codium](https://vscodium.com/#install)
-	- Setup C++
-	- Setup HTML/CSS
-- VNC server setup
-- Bitwarden snap
-- Btop
-- 
