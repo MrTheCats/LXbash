@@ -287,3 +287,12 @@ Or where you put the nextcloud installation
 
 3. Obtain the certificate
 `sudo certbot --apache`
+
+## Git
+
+- Cloning repos `git clone -b BranchName --single-branch https://github.com/username/mainProjectName.git`
+- Stage changes `git add .`
+- Commit `git commit -m "Your commit message here"`
+- Push `git push origin BranchName`
+- Initialiaze a new repo `git init` 
+
