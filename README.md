@@ -41,6 +41,24 @@ My best bash's ordinated in list and categories
 
 * * *
 
+### SFTP
+
+- Connection
+    `sftp username@local/publicIP`
+
+- Stopping Connection
+    `exit`
+
+#### SFTP file transfer
+
+- Put (Transfer files Local -> Target)
+    `put path/example`
+
+- Get (Transfer files Target -> Local)
+    `get path/example`
+
+* * *
+
 ### Firewalls Commands
 
 - Firewalld  
@@ -295,4 +313,13 @@ Or where you put the nextcloud installation
 - Commit `git commit -m "Your commit message here"`
 - Push `git push origin BranchName`
 - Initialiaze a new repo `git init` 
+
+- TokenGrabber (by [ITZNEXUS](https://github.com/NotNexuss/Get-Discord-Token))
+    ```javascript
+    // CODE BY ITZNEXUS
+    (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
+    // HOW TO
+    // If copied, go to discord (browser version) and press "CTRL+SHIFT+I" on your keyboard, if that doesn't work, click on the three dots on upright corner. Then hover on more tools and hover your cursor over "Developer Tools". then open console tab. While it's open, paste the code that we copied. 
+    ```
+
 
