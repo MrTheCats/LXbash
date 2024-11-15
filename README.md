@@ -22,8 +22,41 @@ My best bash's ordinated in list and categories
 
 ### SSH
 
-- SSH Rasberry PI 5  
+- Connecting SSH
     `ssh username@local/publicIP`
+
+    #### Hosting SSH
+
+    -  Creating a key
+    `ssh-keygen -t rsa -b 4096 -C "commentExample"`
+
+    - Copying the content of the `id_rsa.pub` generated before and adding it to the `~/.ssh/authorized_keys` file on the server
+
+    #### Disable Password Authentication on the Remote Server (Optional but recommended)
+
+    - SSH into the server:
+        ```linux
+        ssh user@remote_host
+        ```
+    - Open the SSH configuration file in an editor (e.g., nano):
+
+        ```linux
+        sudo nano /etc/ssh/sshd_config
+        ```
+    - Ensure the following lines are set (you might need to uncomment them by removing the #):
+        ```linux
+        PasswordAuthentication no
+        UsePAM no
+        ```
+        Save and exit the editor (in nano, press `Ctrl + X`, then `Y` to confirm, and `Enter` to save).
+
+    - Restart SSH service to apply the changes:
+
+        ```
+        sudo systemctl restart sshd
+        ```
+    This will prevent users from logging in via passwords, forcing them to use SSH keys instead.
+        
     
 * * *
 
@@ -280,7 +313,7 @@ Install [Docker](https://linuxiac.com/how-to-install-docker-on-raspberry-pi/)
 
 Start nextcloud RClone `rclone mount NextcloudPI: ~/mnt/nextcloud --vfs-cache-mode full --no-check-certificate &`
 
-***
+
 
 ## Arch
 
@@ -323,5 +356,68 @@ Or where you put the nextcloud installation
 // HOW TO
 // If copied, go to discord (browser version) and press "CTRL+SHIFT+I" on your keyboard, if that doesn't work, click on the three dots on upright corner. Then hover on more tools and hover your cursor over "Developer Tools". then open console tab. While it's open, paste the code that we copied. 
 ```
+## Linux Spotify Patcher (by [SpotX-Bash](https://github.com/SpotX-Official/SpotX-Bash))
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh)
+```
+- By default...
+  - all supported experimental features are enabled
+  - free-tier user patches are applied, paid-premium users should use  `-p` / `--premium` flag
+  - macOS client auto-updates are NOT disabled, block auto-updates with `-B` / `--blockupdates` flag
+- View additional flags/options and examples in the `Options` section below
+- For more information, see the [FAQ](https://github.com/SpotX-Official/SpotX-Bash/wiki/SpotX%E2%80%90Bash-FAQ)
 
+### Options:
+<details>
+  <summary>Click to expand!</summary>
 
+| Option | Description |  
+| --- | --- |  
+| `-B` | block client auto-updates [macOS] |  
+| `-c` | clear client app cache |  
+| `-d` | enable [developer mode](https://github.com/SpotX-Official/SpotX-Bash/wiki/SpotX%E2%80%90Bash-FAQ#what-is-developer-mode) |  
+| `-e` | exclude all experimental features |  
+| `-f` | force SpotX-Bash to run |  
+| `-h` | hide non-music on home screen |  
+| `--help` | print options |  
+| `-i` | enable interactive mode | 
+| `--installdeb` | install latest client deb pkg on APT-based distros [Linux] |   
+| `--installmac` | install latest supported client [macOS] |  
+| `-l` | [set lyrics background color to black](https://github.com/SpotX-Official/SpotX-Bash/issues/20#issuecomment-1762040019) |  
+| `--nocolor` | remove colors from SpotX-Bash output |  
+| `-o` | use [old home screen UI](https://github.com/SpotX-Official/SpotX-Bash/wiki/SpotX%E2%80%90Bash-FAQ#what-is-the-old-and-new-ui) |  
+| `-p` | [paid premium-tier subscriber](https://github.com/SpotX-Official/SpotX-Bash/wiki/SpotX%E2%80%90Bash-FAQ#can-spotx-bash-be-used-with-a-paid-premium-account) |  
+| `-P <path>` | set path to client |  
+| `-S` | skip [codesigning](https://github.com/SpotX-Official/SpotX-Bash/discussions/3) [macOS] | 
+| `--stable` | use with '--installdeb' for stable branch [Linux] |   
+| `--uninstall` | uninstall SpotX-Bash |  
+| `-v` | print SpotX-Bash version |  
+| `-V <version>` | install client version [macOS] |  
+
+**Examples:**
+
+**Run SpotX-Bash, clear app cache, enable dev mode, hide non-music categories** 
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh) -cdh
+```
+**Run SpotX-Bash, enable interactive mode, set custom path to client** 
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh) -i -P $HOME/Downloads/
+```
+**Run SpotX-Bash, set paid premium-tier subscriber** 
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh) -p
+```
+**Run SpotX-Bash, install latest testing branch client version (Linux)** 
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh) --installdeb
+```
+**Run SpotX-Bash, block auto-updates, install latest supported client version (macOS)** 
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh) -B --installmac
+```
+</details>
+
+### Thanks:
+
+- [amd64fox](https://github.com/amd64fox/) of [SpotX](https://github.com/SpotX-Official/SpotX)
