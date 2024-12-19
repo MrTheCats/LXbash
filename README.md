@@ -421,3 +421,12 @@ bash <(curl -sSL https://spotx-official.github.io/run.sh) -B --installmac
 ### Thanks:
 
 - [amd64fox](https://github.com/amd64fox/) of [SpotX](https://github.com/SpotX-Official/SpotX)
+
+## Termux
+### Termux Settings
+#### Change terminal font
+Just copy your TTF/OTF font file in the `~/.termux/font.ttf` directory and reload
+	```
+ 	cp path/to/font/ttf/otf ~/.termux/font.ttf
+  	termux-reload-settings
+	```
