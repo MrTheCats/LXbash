@@ -175,6 +175,12 @@ sudo firewall-cmd --reload
 
 * * *
 
+### File Encrypyion (OpenSSL)
+- Crypting a file `openssl enc -aes-256-cbc -salt -pbkdf2 -in "/path/where/is/file/to/encrypt.extension" -out "path/to/export/file.enc" -pass pass:Password123`
+- Decrypting a file `openssl enc -d -aes-256-cbc -pbkdf2 -in "/path/where/is/file/to/decrypt.enc" -out "path/to/export/file.extension" -pass pass:Password123`
+
+* * *
+
 ### Installing nvidia GUI controls
 
 - Installing `sudo pacman -S nvidia-settings`
