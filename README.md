@@ -436,3 +436,24 @@ Just copy your TTF/OTF font file in the `~/.termux/font.ttf` directory and reloa
  	cp path/to/font/ttf/otf ~/.termux/font.ttf
   	termux-reload-settings
 	```
+# Neovim
+## Neovim for devs
+### Installing plugin manager
+1. Use this `curl` command to get the plugin on your device
+2. Create the `.config/nvim` folder and the config file using `nano`
+```
+mkdir -p ~/.config/nvim
+sudo nano ~/.config/nvim/init.vim
+```
+3. When inside the `init.vim` write this
+   ```
+   " Initialize vim-plug
+     call plug#begin('~/.local/share/nvim/plugged')
+
+     " Add your plugins here, for example:
+     Plug 'tpope/vim-sensible'
+
+     call plug#end()
+   ```
+4. Now open neovim with `nvim` and use `:PlugInstall` to install plugin added with `call plug#begin()` or `call plug#end()`
+  
