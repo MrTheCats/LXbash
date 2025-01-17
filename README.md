@@ -17,6 +17,23 @@ My best bash's ordinated in list and categories
 
 - Flash ISO  
     `sudo dd if=</pathISO> of="/pathUSB" bs=4M status=progress oflag=sync`
+* * *
+### Hard disk health and info
+- Enable SmartCTL on the decive
+  `sudo smartctl -i /dev/sdX`
+- If smart is not enabled use this command
+  `sudo smartctl -s on /dev/sdX`
+- Quick health check
+  `sudo smartctl -H /dev/sdX`
+- Detailed disk info
+  `sudo smartctl -a /dev/sdX`
+- Quick Test
+  `sudo smartctl -t short /dev/sdX`
+- Long Test
+  `sudo smartctl -t long /dev/sdX`
+- Check the progress
+  `sudo smartctl -c /dev/sdX`
+
 
 * * *
 
