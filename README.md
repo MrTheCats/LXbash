@@ -13,10 +13,12 @@ My best bash's ordinated in list and categories
 
 * * *
 
-### Flashing
+### dd & Flashing USB
 
 - Flash ISO  
     `sudo dd if=</pathISO> of="/pathUSB" bs=4M status=progress oflag=sync`
+- Clean USB
+    `sudo dd if=/dev/zero of=/dev/sdX bs=4M status=progress`
 * * *
 ### Hard disk health and info
 - Enable SmartCTL on the decive
@@ -33,7 +35,10 @@ My best bash's ordinated in list and categories
   `sudo smartctl -t long /dev/sdX`
 - Check the progress
   `sudo smartctl -c /dev/sdX`
-
+* * *
+### MKFS (Partitioning)
+- Create a ext4 partition
+  `sudo mkfs.ext4 /dev/sdX`
 
 * * *
 
