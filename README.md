@@ -479,3 +479,13 @@ sudo nano ~/.config/nvim/init.vim
    ```
 4. Now open neovim with `nvim` and use `:PlugInstall` to install plugin added with `call plug#begin()` or `call plug#end()`
   
+## Python
+### Using a virtualized enviorment
+1. Create a virtualized enviorment using
+   ```python
+   python -m venv nameOfTheVirtualizedEnviorment
+   ```
+2. Accessing the virtualized enviorment
+   ```python
+   source nameOfTheVirtualizedEnviorment/bin/activate
+   ```
